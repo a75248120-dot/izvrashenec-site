@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Село ИзВращенец</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f1729;
+    color: #fff;
+    line-height: 1.6;
+  }
+  
+  /* Шапка */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6a3093 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: "🏔️";
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.05;
+    top: 10%;
+    left: -20px;
+  }
+  
+  .hero::after {
+    content: "🌊";
+    position: absolute;
+    font-size: 180px;
+    opacity: 0.05;
+    bottom: 10%;
+    right: -20px;
+  }
+  
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #fff, #a8d8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    z-index: 1;
+  }
+  
+  .hero .subtitle {
+    font-size: 17px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+    z-index: 1;
+  }
+  
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    font-size: 28px;
+    animation: bounce 2s infinite;
+    opacity: 0.7;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+  
+  /* Секции */
+  .section {
+    padding: 60px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #a8d8ff;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 16px;
+    transition: transform 0.3s;
+  }
+  
+  .card:active { transform: scale(0.98); }
+  
+  .card .icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .card h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  
+  .card p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  
+  /* Секция про природу */
+  .nature {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  }
+  
+  /* Секция контракта */
+  .contract {
+    background: linear-gradient(135deg, #232526, #414345);
+    padding: 60px 20px;
+  }
+  
+  .contract .inner {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .contract h2 {
+    color: #ffd166;
+  }
+  
+  .benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .benefit .ico {
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+  
+  .benefit .txt h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  
+  .benefit .txt p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .note {
+    background: rgba(255, 209, 102, 0.1);
+    border-left: 4px solid #ffd166;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  
+  /* Подвал */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    background: #0a0f1c;
+  }
+  
+  .btn-link {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #2a5298, #6a3093);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  
+  .btn-link:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ГЛАВНЫЙ ЭКРАН -->
+  <div class="hero">
+    <h1>Село ИзВращенец</h1>
+    <p class="subtitle">Место, где есть всё 🌍</p>
+    <div class="scroll-hint">↓</div>
+  </div>
+
+  <!-- ПРИРОДА -->
+  <div class="section nature">
+    <h2>🌿 Природа нашего села</h2>
+
+    <div class="card">
+      <span class="icon">🌾</span>
+      <h3>Поля</h3>
+      <p>Бескрайние поля пшеницы и трав. Летом — золотое море колосьев до горизонта.</p>
+    </div>
+
+    <div class="card">
+      <span class="icon">🌊</span>
+      <h3>Море</h3>
+      <p>Тёплое море с песчаными пляжами. Идеально для купания и закатов.</p>
+    </div>
+
+    <div class="card">
+      <span class="icon">🌅</span>
+      <h3>Океан</h3>
+      <p>Выход к океану — мощь и простор. Волны, шум прибоя и бескрайний горизонт.</p>
+    </div>
+
+    <div class="card">
+      <span class="icon">🏔️</span>
+      <h3>Горы</h3>
+      <p>Величественные вершины. Можно подняться, покататься или просто насладиться видом.</p>
+    </div>
+
+    <div class="card">
+      <span class="icon">🌳</span>
+      <h3>Леса и реки</h3>
+      <p>Густые леса, чистые реки, грибы, рыбалка — природа во всей красе.</p>
+    </div>
+  </div>
+
+  <!-- СЛУЖБА ПО КОНТРАКТУ -->
+  <div class="contract">
+    <div class="inner">
+      <h2>🎖️ Служба по контракту</h2>
+      <p style="text-align:center; opacity:0.75; margin-bottom:26px; font-size:15px;">
+        Служба по контракту — это официальная работа в рядах Вооружённых Сил с трудовым договором.
+      </p>
+
+      <div class="benefit">
+        <div class="ico">💰</div>
+        <div class="txt">
+          <h4>Стабильная зарплата</h4>
+          <p>Регулярные выплаты, премии и надбавки за выслугу и сложность.</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="ico">🏠</div>
+        <div class="txt">
+          <h4>Жильё и льготы</h4>
+          <p>Служебное жильё или компенсация, медицинское обеспечение, страховка.</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="ico">📚</div>
+        <div class="txt">
+          <h4>Обучение и профессия</h4>
+          <p>Военные специальности, курсы повышения квалификации за счёт государства.</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="ico">🎓</div>
+        <div class="txt">
+          <h4>Льготы для семьи</h4>
+          <p>Поддержка семьи, детские сады, санатории, льготы при поступлении.</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="ico">🏅</div>
+        <div class="txt">
+          <h4>Пенсия и выслуга</h4>
+          <p>Выслуга лет, досрочная пенсия, статус ветерана после определённого срока.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        ⚠️ <strong>Важно знать:</strong> служба по контракту — это серьёзное решение. 
+        Перед подписанием контракта узнай всё о должности, условиях, месте службы и 
+        обязанностях. Поговори с близкими и обратись в военный комиссариат 
+        (военкомат) по месту жительства — там всё расскажут бесплатно.
+      </div>
+
+      <!-- ЗАМЕНИ ССЫЛКУ НА СВОЮ -->
+      <a href="https://mil.ru" class="btn-link" target="_blank">
+        📞 Узнать подробнее
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Село ИзВращенец · Сделано с любовью к родному краю
+  </footer>
+
+</body>
+</html>
